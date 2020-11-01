@@ -15,6 +15,9 @@
         <module>zhiliao-order</module>
         <module>zhiliao-product</module>
         <module>zhiliao-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>zhiliao-common</module>
     </modules>
 
 </project>
