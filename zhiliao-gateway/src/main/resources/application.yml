@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.100:8848
+  application:
+    name: zhiliao-gateway
+
+server:
+  port: 88
