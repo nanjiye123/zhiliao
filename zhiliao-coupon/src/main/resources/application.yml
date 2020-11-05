@@ -4,6 +4,13 @@ spring:
     password: root
     url: jdbc:mysql://192.168.0.100:3306/zhiliao_sms
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.100:8848
+  application:
+    name: zhiliao-coupon
+
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*:xml
@@ -13,3 +20,5 @@ mybatis-plus:
 
 server:
   port: 7000
+
+testport: 115
