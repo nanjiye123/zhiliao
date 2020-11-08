@@ -3,8 +3,28 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.0.200:8848
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://zhiliao-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            #前端请求http://localhost:88/api/captcha.jpg    后端真正的请求http://localhost:8080/renren-fast/captcha.jpg
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+          #前端请求http://localhost:88/api/captcha.jpg    后端真正的请求http://localhost:8080/renren-fast/captcha.jpg
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
   application:
     name: zhiliao-gateway
+
+
 
 server:
   port: 88

@@ -18,6 +18,7 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>zhiliao-common</module>
+        <module>zhiliao-gateway</module>
     </modules>
 
 </project>
